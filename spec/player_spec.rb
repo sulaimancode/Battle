@@ -18,4 +18,10 @@ let(:player2) { described_class.new(player_2_name)}
       expect(player1.hitpoints).to eq described_class::DEFAULT_HP
     end
   end
+
+  describe '#receive_damage' do
+  it 'reduces the player hit points' do
+    expect { player1.receive_damage }.to change { player1.hitpoints }.by(-10)
+  end
+end
 end
