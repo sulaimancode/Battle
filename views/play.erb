@@ -1,11 +1,15 @@
+<% if @game.player_turn.hitpoints == 0 %>
+  <h1><%= @game.player_turn.name %> LOSES</h1>
+<% else %>
+
+
 <div style="position:center">
 <h1 style='position:center'><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 <h1 style='position:center'><%= @game.player_turn.name %>'s turn!</h1>
 </div>
-<img src="https://media.giphy.com/media/yu5btCD90bRZu/giphy.gif" style='position:fixed;bottom:10px;left:30px' width="250" height="300" frameBorder="0" allowFullScreen></img></a>
-<img src="https://media.giphy.com/media/xUPGcv7WfvxQ38YXXa/giphy.gif" style='position:fixed;bottom:10px;right:30px' width="250" height="300" frameBorder="0" allowFullScreen></img></a>
+<img src="https://media.giphy.com/media/yu5btCD90bRZu/giphy.gif" style='position:fixed;bottom:10px;left:30px' width="250" height="300" frameBorder="0" allowFullScreen></img>
+<img src="https://media.giphy.com/media/xUPGcv7WfvxQ38YXXa/giphy.gif" style='position:fixed;bottom:10px;right:30px' width="250" height="300" frameBorder="0" allowFullScreen></img>
 
-<!-- <h2><%= @game.player_2.name %>: <%= @game.player_2.hitpoints %>HP</h2> -->
 <form action="/attacked">
 <input type="submit" value="Attack!" style="font-size:20px">
 <div style="position:fixed;top:30px;left:30px">
@@ -25,6 +29,7 @@ h1 {
 }
 
 input {
+    font-family:'Comic Sans MS';
     position: relative;
     top: 70px;
     left: 575px;
@@ -33,3 +38,4 @@ input {
     background: #ff0000
 }
 </style>
+<% end %>

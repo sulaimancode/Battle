@@ -14,4 +14,18 @@ feature 'attacking' do
     visit('/play')
     expect(page).to have_content 'Unai : 90 HP'
   end
+
+  scenario 'switches players' do
+    sign_in_and_play
+    click_button 'Attack!'
+    visit('/play')
+    expect(page).to have_content "Sulaiman's turn"
+  end
+
+  scenario 'player dies' do
+    sign_in_and_play
+    19.times { click_button 'Attack!'; visit('/play') }
+    expect(page).to have_content "Sulaiman LOSES"
+  end
+
 end
