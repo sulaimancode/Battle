@@ -4,5 +4,11 @@
 <h2><%= @game.player_2.name %> took one to the jaw </h2>
 <h2> <%= @game.player_2.name %>'s HP was slammed by 10!!! </h2>
 <h2><%= @game.player_2.name %>: <%= @game.player_2.hitpoints %>HP</h2> -->
+<% if @game.player_turn == @game.player_2 %>
 <img src="https://media.giphy.com/media/qHRFq5ruImgKc/giphy.gif" style='position:fixed;bottom:10px;left:30px' width="1000" height="400" frameBorder="0" allowFullScreen></img></a>
 <img src="https://media.giphy.com/media/xUPGcv7WfvxQ38YXXa/giphy.gif" style='position:fixed;bottom:10px;right:30px' width="250" height="300" frameBorder="0" allowFullScreen></img></a>
+<% end %>
+<% if @game.player_turn == @game.player_1 %>
+<img src="https://media.giphy.com/media/l4FGsPLRdvZkCYss8/giphy.gif" style='position:fixed;bottom:10px;right:30px' width="1000" height="400" frameBorder="0" allowFullScreen></img></a>
+<img src="https://media.giphy.com/media/yu5btCD90bRZu/giphy.gif" style='position:fixed;bottom:10px;left:30px' width="250" height="300" frameBorder="0" allowFullScreen></img></a>
+<% end %>

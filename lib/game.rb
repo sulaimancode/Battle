@@ -1,8 +1,9 @@
 class Game
-  attr_reader :players
+  attr_reader :players, :turns
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
+    @turns = [player_1, player_2]
   end
 
   def player_1
@@ -11,6 +12,14 @@ class Game
 
   def player_2
     @players.last
+  end
+
+  def switch_turns
+    @turns.reverse!
+  end
+
+  def player_turn
+    @turns.first
   end
 
   def attack(player)

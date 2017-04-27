@@ -23,4 +23,18 @@ let(:player2) { double :player}
     end
   end
 
+  describe '#switch_turns' do
+    it 'switches the players turns' do
+      game.switch_turns
+      expect(game.turns).to eq [player2, player1]
+    end
+  end
+
+  describe '#player_turn' do
+    it 'shows whose turn it is' do
+      game.switch_turns
+      expect(game.player_turn).to eq player2
+    end
+  end
+
 end

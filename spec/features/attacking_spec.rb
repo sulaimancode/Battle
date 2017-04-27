@@ -10,6 +10,8 @@ feature 'attacking' do
     sign_in_and_play
     click_button 'Attack!'
     visit('/play')
+    click_button 'Attack!'
+    visit('/play')
     expect(page).to have_content 'Unai : 90 HP'
   end
 end

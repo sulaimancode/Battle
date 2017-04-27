@@ -24,7 +24,8 @@ set :session_secret, "Here be Dragons"
 
   get '/attacked' do
     @game = $game
-    @game.attack(@game.player_2)
+    @game.switch_turns
+    @game.attack(@game.player_turn)
     erb(:attack)
   end
 
