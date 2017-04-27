@@ -4,7 +4,7 @@ require_relative './lib/game'
 
 class Battle < Sinatra::Base
 # enable :sessions
-# set :session_secret, "Here be Dragons"
+set :session_secret, "Here be Dragons"
 
   get '/' do
     erb(:index)
