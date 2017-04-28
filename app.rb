@@ -6,6 +6,10 @@ class Battle < Sinatra::Base
 # enable :sessions
 set :session_secret, "Here be Dragons"
 
+  before do
+    @game = Game.load
+  end
+
   get '/' do
     erb(:index)
   end
@@ -19,12 +23,12 @@ set :session_secret, "Here be Dragons"
   end
 
   get '/play' do
-    @game = Game.load
+    # @game = Game.load
     erb(:play)
   end
 
   get '/attacked' do
-    @game = Game.load
+    # @game = Game.load
     @game.switch_turns
     @game.attack(@game.player_turn)
     erb(:attack)
