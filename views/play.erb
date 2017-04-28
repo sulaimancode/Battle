@@ -1,9 +1,11 @@
-<% if @game.player_turn.hitpoints == 0 %>
-  <h1><%= @game.player_turn.name %> LOSES</h1>
+
+<img src="https://twistedsifter.files.wordpress.com/2013/05/animated-gifs-of-fighting-game-backgrounds-24.gif?w=1600&h=672"
+style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+
+<% if @game.player_turn.hitpoints <= 0 %>
+  <h1 style='color:white'><%= @game.player_turn.name %> LOSES</h1>
 <% else %>
-
-
-<div style="position:center">
+<div style="position:center;color:white">
 <h1 style='position:center'><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 <h1 style='position:center'><%= @game.player_turn.name %>'s turn!</h1>
 </div>
@@ -12,12 +14,12 @@
 
 <form action="/attacked">
 <input type="submit" value="Attack!" style="font-size:20px">
-<div style="position:fixed;top:30px;left:30px">
+<div style="position:fixed;top:30px;left:30px;color:white">
     <h1>warrior 1</h1>
     <p><%= @game.player_1.name %> : <%= @game.player_1.hitpoints %> HP</p>
 </div>
 
-<div style="position:fixed;top:30px;right:30px">
+<div style="position:fixed;top:30px;right:30px;color:white">
     <h1>warrior 2</h1>
     <p><%= @game.player_2.name %> : <%= @game.player_2.hitpoints %> HP</p>
 </div>

@@ -9,6 +9,6 @@ class Player
   end
 
   def receive_damage
-    @hitpoints -= 10
+    @hitpoints -= rand(5..20)
   end
 end
