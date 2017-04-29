@@ -23,6 +23,13 @@ let(:player2) { double :player}
     end
   end
 
+  describe '#heal' do
+    it 'heals the player' do
+      allow(player2).to receive(:increase_health)
+      game.heal(player2)
+    end
+  end
+
   describe '#switch_turns' do
     it 'switches the players turns' do
       game.switch_turns

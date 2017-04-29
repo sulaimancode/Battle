@@ -11,4 +11,8 @@ class Player
   def receive_damage
     @hitpoints -= rand(5..20)
   end
+
+  def increase_health
+    @hitpoints += rand(5..20)
+  end
 end

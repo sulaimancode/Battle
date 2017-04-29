@@ -20,9 +20,16 @@ let(:player2) { described_class.new(player_2_name)}
   end
 
   describe '#receive_damage' do
-  it 'reduces the player hit points' do
-    srand(11)
-    expect { player1.receive_damage }.to change { player1.hitpoints }.by(-14)
+    it 'reduces the player hit points' do
+      srand(11)
+      expect { player1.receive_damage }.to change { player1.hitpoints }.by(-14)
+    end
   end
-end
+
+  describe '#increase_health' do
+    it 'increases the player hit points' do
+      srand(11)
+      expect { player1.increase_health }.to change { player1.hitpoints }.by(+14)
+    end
+  end
 end

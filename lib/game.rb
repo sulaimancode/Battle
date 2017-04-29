@@ -34,4 +34,8 @@ class Game
     player.receive_damage
   end
 
+  def heal(player)
+    player.increase_health
+  end
+
 end
